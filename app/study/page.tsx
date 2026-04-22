@@ -89,7 +89,7 @@ function StudyContent() {
         <div className="max-w-lg mx-auto space-y-6 pt-8">
           <Card className="bg-zinc-900 border-zinc-800 text-center">
             <CardHeader className="pb-2">
-              <CardTitle className="text-2xl">Study Complete!</CardTitle>
+              <CardTitle className="text-2xl text-white">Study Complete!</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 pt-0">
               <div className="py-4">
