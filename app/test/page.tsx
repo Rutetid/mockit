@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, Suspense, useRef } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -34,6 +34,13 @@ function TestContent() {
   const [submitted, setSubmitted] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [pendingSubmit, setPendingSubmit] = useState(false);
+  const resultsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (submitted && resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [submitted]);
 
   useEffect(() => {
     const weeksParam = searchParams.get('weeks');
@@ -89,7 +96,7 @@ function TestContent() {
       <div className="min-h-screen bg-[#0C0C0C]">
         <Navbar />
         <main className="pt-20 pb-12 px-4">
-        <div className="max-w-lg mx-auto space-y-6 pt-8">
+        <div ref={resultsRef} className="max-w-lg mx-auto space-y-6 pt-8">
           <Card className="bg-zinc-900 border-zinc-800 text-center">
             <CardHeader className="pb-2">
               <CardTitle className="text-2xl text-white">Test Complete!</CardTitle>
@@ -179,7 +186,7 @@ function TestContent() {
 
         <div className="flex justify-between items-center">
           <Link href="/practice" className="text-zinc-500 hover:text-white text-sm">← Exit</Link>
-          <Button onClick={handleSubmit} className="text-sm">
+          <Button onClick={handleSubmit} className="bg-white text-black hover:bg-zinc-200 text-sm">
             Submit
           </Button>
         </div>
@@ -220,7 +227,7 @@ function TestContent() {
         </div>
 
         <div className="sticky bottom-4">
-          <Button onClick={handleSubmit} className="w-full h-12 text-lg">
+          <Button onClick={handleSubmit} className="w-full h-12 text-lg bg-white text-black hover:bg-zinc-200">
             Submit ({answeredCount}/{answers.length})
           </Button>
         </div>

@@ -1,16 +1,12 @@
 # MockIt
 
-A modern, mobile-friendly practice exam web application for course preparation.
-
-![Next.js](https://img.shields.io/badge/Next.js-16-black)
-![React](https://img.shields.io/badge/React-19-61DAFB)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC)
+A modern, mobile-friendly practice exam web application for MOOC exam preparation.
 
 ## Features
 
 - **Study Mode** - Practice with instant feedback as you answer each question
 - **Test Mode** - Answer all questions and submit to see your results
-- **Exam Mode** - Simulate the real exam with 50 random questions
+- **Exam Mode** - Simulate the real exam with 75 random questions
 - **120 Questions** - 12 weeks of content (10 questions per week)
 - **Dark Theme** - Easy on the eyes, modern design
 - **Mobile-Friendly** - Practice anywhere on any device

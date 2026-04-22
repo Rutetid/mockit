@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -31,9 +31,16 @@ export default function ExamPage() {
   const [answers, setAnswers] = useState<AnsweredQuestion[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const resultsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (submitted && resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [submitted]);
 
   const handleStart = () => {
-    const questions = getRandomQuestions(50);
+    const questions = getRandomQuestions(75);
     setQuizQuestions(questions);
     setAnswers(questions.map(q => ({ question: q, selectedAnswer: null })));
     setQuizStarted(true);
@@ -90,7 +97,7 @@ export default function ExamPage() {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="text-center py-4">
-                <div className="text-4xl font-bold text-white">50</div>
+                <div className="text-4xl font-bold text-white">75</div>
                 <div className="text-zinc-500 mt-2">Questions</div>
                 <p className="text-sm text-zinc-400 mt-4">Questions will be randomly selected from all available questions</p>
               </div>
@@ -112,7 +119,7 @@ export default function ExamPage() {
       <div className="min-h-screen bg-[#0C0C0C]">
         <Navbar />
         <main className="pt-20 pb-12 px-4">
-        <div className="max-w-lg mx-auto space-y-6 pt-8">
+        <div ref={resultsRef} className="max-w-lg mx-auto space-y-6 pt-8">
           <Card className="bg-zinc-900 border-zinc-800 text-center">
             <CardHeader className="pb-2">
               <CardTitle className="text-2xl text-white">Exam Complete!</CardTitle>
@@ -202,7 +209,7 @@ export default function ExamPage() {
 
         <div className="flex justify-between items-center">
           <Link href="/practice" className="text-zinc-500 hover:text-white text-sm">← Exit</Link>
-          <Button onClick={handleSubmit} className="text-sm">
+          <Button onClick={handleSubmit} className="bg-white text-black hover:bg-zinc-200 text-sm">
             Submit
           </Button>
         </div>
@@ -243,7 +250,7 @@ export default function ExamPage() {
         </div>
 
         <div className="sticky bottom-4">
-          <Button onClick={handleSubmit} className="w-full h-12 text-lg">
+          <Button onClick={handleSubmit} className="w-full h-12 text-lg bg-white text-black hover:bg-zinc-200">
             Submit ({answeredCount}/{answers.length})
           </Button>
         </div>

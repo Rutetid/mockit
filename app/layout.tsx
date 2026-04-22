@@ -11,7 +11,24 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "MockIt - Practice Exams",
-  description: "Practice for your exams with study, test, and exam modes",
+  description: "A modern practice exam app for MOOC courses. Study mode, test mode, and exam mode with 75 random questions. Prepare for your exams effectively.",
+  keywords: ["practice exam", "MOOC", "study", "test", "education", "quiz"],
+  authors: [{ name: "Abhishek" }],
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
+  openGraph: {
+    title: "MockIt - Practice Exams",
+    description: "A modern practice exam app for MOOC courses. Study mode, test mode, and exam mode with 75 random questions.",
+    type: "website",
+    siteName: "MockIt",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MockIt - Practice Exams",
+    description: "A modern practice exam app for MOOC courses. Study mode, test mode, and exam mode with 75 random questions.",
+  },
 };
 
 export default function RootLayout({

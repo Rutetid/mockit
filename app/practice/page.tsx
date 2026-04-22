@@ -140,7 +140,7 @@ function PracticeContent() {
               >
                 <div className="text-2xl mb-1">🎯</div>
                 <div className="text-sm font-medium text-white">Exam</div>
-                <div className="text-xs text-zinc-500">50 questions</div>
+                <div className="text-xs text-zinc-500">75 questions</div>
               </button>
             </CardContent>
           </Card>
