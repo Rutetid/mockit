@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, Suspense, useRef } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -26,6 +26,20 @@ function StudyContent() {
   const [quizQuestions, setQuizQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<AnsweredQuestion[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const questionsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const weeksParam = searchParams.get('weeks');
@@ -160,6 +174,16 @@ function StudyContent() {
             </Card>
           ))}
         </div>
+
+        {showScrollTop && (
+          <button
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-6 w-12 h-12 bg-zinc-800 hover:bg-zinc-700 text-white rounded-full flex items-center justify-center shadow-lg border border-zinc-700 transition-colors z-50"
+            aria-label="Back to top"
+          >
+            ↑
+          </button>
+        )}
       </div>
     </main>
     </div>
