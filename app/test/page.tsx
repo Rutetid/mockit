@@ -160,7 +160,7 @@ function TestContent() {
       <Navbar />
       <main className="pt-20 pb-12 px-4">
       <div className="max-w-lg mx-auto space-y-4">
-        <div className="space-y-2">
+        <div className="sticky top-16 bg-[#0C0C0C] -mx-4 px-4 py-3 space-y-2 border-b border-zinc-800 z-40">
           <div className="flex justify-between text-sm text-zinc-500">
             <Badge variant="secondary">Test Mode</Badge>
             <span>{answeredCount} / {answers.length}</span>
