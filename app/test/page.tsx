@@ -16,6 +16,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Navbar } from '@/components/navbar';
+import { Confetti } from '@/components/confetti';
 import { questions as allQuestions } from '@/lib/questions';
 import { Question } from '@/lib/types';
 
@@ -37,8 +38,8 @@ function TestContent() {
   const resultsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (submitted && resultsRef.current) {
-      resultsRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (submitted) {
+      window.scrollTo(0, 0);
     }
   }, [submitted]);
 
@@ -92,8 +93,10 @@ function TestContent() {
 
   if (submitted) {
     const percentage = answers.length > 0 ? Math.round((correctCount / answers.length) * 100) : 0;
+    const isPerfect = correctCount === answers.length;
     return (
       <div className="min-h-screen bg-[#0C0C0C]">
+        <Confetti active={isPerfect} />
         <Navbar />
         <main className="pt-20 pb-12 px-4">
         <div ref={resultsRef} className="max-w-lg mx-auto space-y-6 pt-8">

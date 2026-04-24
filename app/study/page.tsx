@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Navbar } from '@/components/navbar';
+import { Confetti } from '@/components/confetti';
 import { questions as allQuestions } from '@/lib/questions';
 import { Question } from '@/lib/types';
 
@@ -82,8 +83,10 @@ function StudyContent() {
   const progress = answers.length > 0 ? (answeredCount / answers.length) * 100 : 0;
 
   if (showResults) {
+    const isPerfect = correctCount === answers.length;
     return (
       <div className="min-h-screen bg-[#0C0C0C]">
+        <Confetti active={isPerfect} />
         <Navbar />
         <main className="pt-20 pb-12 px-4">
         <div className="max-w-lg mx-auto space-y-6 pt-8">
@@ -115,7 +118,7 @@ function StudyContent() {
       <Navbar />
       <main className="pt-20 pb-12 px-4">
       <div className="max-w-lg mx-auto space-y-4">
-        <div className="space-y-2">
+        <div className="sticky top-0 bg-[#0C0C0C] -mx-4 px-4 py-3 space-y-2 border-b border-zinc-800 z-40">
           <div className="flex justify-between text-sm text-zinc-500">
             <Badge variant="secondary">Study Mode</Badge>
             <span>{answeredCount} / {answers.length}</span>
@@ -126,7 +129,7 @@ function StudyContent() {
         <div className="flex justify-between items-center">
           <Link href="/practice" className="text-zinc-500 hover:text-white text-sm">← Exit</Link>
           {answeredCount === answers.length && (
-            <Button onClick={() => setShowResults(true)} className="text-sm">
+            <Button onClick={() => setShowResults(true)} className="text-sm bg-white text-black hover:bg-zinc-200">
               Finish →
             </Button>
           )}
@@ -174,6 +177,14 @@ function StudyContent() {
             </Card>
           ))}
         </div>
+
+        {answeredCount === answers.length && (
+          <div className="sticky bottom-4">
+            <Button onClick={() => setShowResults(true)} className="w-full h-12 text-lg bg-white text-black hover:bg-zinc-200">
+              Finish ({answeredCount}/{answers.length})
+            </Button>
+          </div>
+        )}
 
         {showScrollTop && (
           <button

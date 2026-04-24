@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Navbar } from '@/components/navbar';
+import { Confetti } from '@/components/confetti';
 import {
   Dialog,
   DialogContent,
@@ -34,8 +35,8 @@ export default function ExamPage() {
   const resultsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (submitted && resultsRef.current) {
-      resultsRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (submitted) {
+      window.scrollTo(0, 0);
     }
   }, [submitted]);
 
@@ -115,8 +116,10 @@ export default function ExamPage() {
 
   if (submitted) {
     const percentage = Math.round((correctCount / answers.length) * 100);
+    const isPerfect = correctCount === answers.length;
     return (
       <div className="min-h-screen bg-[#0C0C0C]">
+        <Confetti active={isPerfect} />
         <Navbar />
         <main className="pt-20 pb-12 px-4">
         <div ref={resultsRef} className="max-w-lg mx-auto space-y-6 pt-8">
