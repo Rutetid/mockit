@@ -36,7 +36,7 @@ function PracticeContent() {
   };
 
   const selectAll = () => {
-    setSelectedWeeks([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+    setSelectedWeeks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
   };
 
   const clearAll = () => {
@@ -87,8 +87,8 @@ function PracticeContent() {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-6 gap-2">
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(week => (
+              <div className="grid grid-cols-7 gap-2">
+                {[0, 1, 2, 3, 4, 5, 6].map(week => (
                   <Button
                     key={week}
                     variant={selectedWeeks.includes(week) ? 'default' : 'outline'}
@@ -100,6 +100,21 @@ function PracticeContent() {
                     {week}
                   </Button>
                 ))}
+              </div>
+              <div className="grid grid-cols-7 gap-2 mt-2">
+                {[7, 8, 9, 10, 11, 12].map(week => (
+                  <Button
+                    key={week}
+                    variant={selectedWeeks.includes(week) ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => toggleWeek(week)}
+                    disabled={selectedMode === 'exam'}
+                    className={`h-10 ${selectedWeeks.includes(week) ? 'bg-[#C2410C] hover:bg-[#9A3412]' : 'border-zinc-700 text-zinc-400 hover:bg-zinc-800 hover:text-white'}`}
+                  >
+                    {week}
+                  </Button>
+                ))}
+                <div></div>
               </div>
             </CardContent>
           </Card>

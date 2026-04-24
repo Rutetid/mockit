@@ -3,6 +3,101 @@ import { shuffleArray } from './utils';
 
 export const questions: Question[] = [
   {
+    id: "w0-q1",
+    week: 0,
+    question: "The full form of SDGs is ___.",
+    options: [
+      "Sustainable Development Guide",
+      "Sensitive Development Guide",
+      "Sustainable Driving Goals",
+      "Sustainable Development Goals"
+    ],
+    correctAnswer: 3,
+    explanation: ""
+  },
+  {
+    id: "w0-q2",
+    week: 0,
+    question: "The SDGs have been adopted by ___ member states.",
+    options: [
+      "South African",
+      "Asian",
+      "United Nations",
+      "Parliamentary"
+    ],
+    correctAnswer: 2,
+    explanation: ""
+  },
+  {
+    id: "w0-q3",
+    week: 0,
+    question: "SDGs consist of ___ number of goals.",
+    options: ["15", "13", "17", "21"],
+    correctAnswer: 2,
+    explanation: ""
+  },
+  {
+    id: "w0-q4",
+    week: 0,
+    question: "SDGs are at the heart of the ___ agenda for sustainable development.",
+    options: ["2035", "2030", "2015", "2024"],
+    correctAnswer: 1,
+    explanation: ""
+  },
+  {
+    id: "w0-q5",
+    week: 0,
+    question: "SDGs are also known as ___.",
+    options: ["Sensible goals", "Global goals", "Holistic goals", "None of the above"],
+    correctAnswer: 1,
+    explanation: ""
+  },
+  {
+    id: "w0-q6",
+    week: 0,
+    question: "All the SDGs are ___",
+    options: ["False", "Only for one country", "Interconnected", "None of the above"],
+    correctAnswer: 2,
+    explanation: ""
+  },
+  {
+    id: "w0-q7",
+    week: 0,
+    question: "MDGs stand for ___",
+    options: [
+      "Motivational Development Goals",
+      "Macro Development Goals",
+      "Millennium Development Goals",
+      "Micro Development Goals"
+    ],
+    correctAnswer: 2,
+    explanation: ""
+  },
+  {
+    id: "w0-q8",
+    week: 0,
+    question: "The Agenda ___ was adopted at the Earth Summit",
+    options: ["30", "35", "40", "21"],
+    correctAnswer: 3,
+    explanation: ""
+  },
+  {
+    id: "w0-q9",
+    week: 0,
+    question: "There were ___ number of MDGs given, which were later replaced by the SDGs",
+    options: ["17", "8", "18", "10"],
+    correctAnswer: 1,
+    explanation: ""
+  },
+  {
+    id: "w0-q10",
+    week: 0,
+    question: "The 'D' in DSDG stands for ___.",
+    options: ["Division", "Distance", "Diversity", "None of the above"],
+    correctAnswer: 0,
+    explanation: ""
+  },
+  {
     id: "w1-q1",
     week: 1,
     question:
