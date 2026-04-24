@@ -66,6 +66,11 @@ function PracticeContent() {
             <p className="text-sm text-zinc-400 mt-2">
               By Prof. Atasi Mohanty | IIT Kharagpur
             </p>
+            <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium">
+              <span>✨</span>
+              <span>All the best for your MOOC Exams!</span>
+              <span>✨</span>
+            </div>
           </div>
 
           <Card className={`bg-zinc-900 border-zinc-800 ${selectedMode === 'exam' ? 'opacity-50' : ''}`}>

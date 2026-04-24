@@ -40,6 +40,12 @@ function StudyContent() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (showResults) {
+      window.scrollTo(0, 0);
+    }
+  }, [showResults]);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -139,6 +145,37 @@ function StudyContent() {
               </div>
             </CardContent>
           </Card>
+
+          <div className="space-y-3">
+            {answers.map((aq, questionIndex) => {
+              const correctIndex = aq.shuffledOptions.findIndex(o => o.isCorrect);
+              const isCorrect = aq.isCorrect;
+              return (
+                <Card key={aq.question.id} className={`${isCorrect ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-red-500/30 bg-red-500/5'}`}>
+                  <CardContent className="py-4">
+                    <div className="flex gap-2 text-xs text-zinc-500 mb-2">
+                      <Badge variant="outline" className="border-zinc-700 text-zinc-400">Week {aq.question.week}</Badge>
+                      <span>Q{questionIndex + 1}</span>
+                      <Badge variant={isCorrect ? 'default' : 'destructive'} className="ml-auto">
+                        {isCorrect ? 'Correct' : 'Incorrect'}
+                      </Badge>
+                    </div>
+                    <p className="text-sm font-medium text-white mb-2">{aq.question.question}</p>
+                    <p className="text-sm text-zinc-400">
+                      Your answer: <span className={isCorrect ? 'text-emerald-400' : 'text-red-400'}>
+                        {aq.selectedAnswer !== null ? aq.shuffledOptions[aq.selectedAnswer].text : 'Not answered'}
+                      </span>
+                    </p>
+                    {!isCorrect && aq.selectedAnswer !== null && (
+                      <p className="text-sm text-emerald-400 mt-1">
+                        Correct: {aq.shuffledOptions[correctIndex].text}
+                      </p>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
         </div>
         </main>
       </div>
