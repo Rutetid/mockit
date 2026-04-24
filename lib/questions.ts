@@ -304,6 +304,7 @@ export const questions: Question[] = [
     options: ["schools", "parents", "community", "all the given"],
     correctAnswer: 3,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w2-q8",
@@ -345,6 +346,7 @@ export const questions: Question[] = [
     options: ["multiple", "diverse", "local and non-local", "all of the given"],
     correctAnswer: 3,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w3-q2",
@@ -406,6 +408,7 @@ export const questions: Question[] = [
     options: ["facilitator", "guide", "role model", "all of the given"],
     correctAnswer: 3,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w3-q8",
@@ -514,6 +517,7 @@ export const questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w4-q7",
@@ -530,6 +534,7 @@ export const questions: Question[] = [
     options: ["creativity", "empathy", "systems thinking", "all of the given"],
     correctAnswer: 3,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w4-q9",
@@ -631,6 +636,7 @@ export const questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w5-q7",
@@ -731,6 +737,7 @@ export const questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w6-q6",
@@ -808,6 +815,7 @@ export const questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w7-q2",
@@ -1184,6 +1192,7 @@ export const questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w10-q5",
@@ -1192,6 +1201,7 @@ export const questions: Question[] = [
     options: ["transparency", "presencing", "integrity", "all of the given"],
     correctAnswer: 3,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w10-q6",
@@ -1266,6 +1276,7 @@ export const questions: Question[] = [
     options: ["ecological", "economic", "political", "all of the given"],
     correctAnswer: 3,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w11-q4",
@@ -1385,11 +1396,11 @@ export const questions: Question[] = [
     correctAnswer: 0,
     explanation: "",
   },
-  {
+{
     id: "w12-q5",
     week: 12,
     question:
-      "As responsible consumers, we should ask ourselves “___” before buying anything.",
+      "As responsible consumers, we should ask ourselves ___ before buying anything.",
     options: [
       "do I really need it?",
       "how long will I use it?",
@@ -1398,6 +1409,7 @@ export const questions: Question[] = [
     ],
     correctAnswer: 3,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w12-q6",
