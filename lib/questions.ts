@@ -295,6 +295,7 @@ export const questions: Question[] = [
     ],
     correctAnswer: 2,
     explanation: "",
+    noShuffle: true,
   },
   {
     id: "w2-q7",

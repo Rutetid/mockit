@@ -19,7 +19,13 @@ export interface ShuffledOption {
   isCorrect: boolean;
 }
 
-export function shuffleOptions(options: string[], correctAnswer: number): ShuffledOption[] {
+export function shuffleOptions(options: string[], correctAnswer: number, noShuffle?: boolean): ShuffledOption[] {
+  if (noShuffle) {
+    return options.map((opt, idx) => ({
+      text: opt,
+      isCorrect: idx === correctAnswer,
+    }));
+  }
   const shuffled = shuffleArray(
     options.map((opt, idx) => ({
       text: opt,

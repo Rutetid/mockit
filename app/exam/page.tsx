@@ -48,7 +48,7 @@ export default function ExamPage() {
     setAnswers(questions.map(q => ({ 
       question: q, 
       selectedAnswer: null,
-      shuffledOptions: shuffleOptions(q.options, q.correctAnswer)
+      shuffledOptions: shuffleOptions(q.options, q.correctAnswer, q.noShuffle)
     })));
     setQuizStarted(true);
   };
@@ -92,7 +92,7 @@ export default function ExamPage() {
     setAnswers(wrongQuestions.map(q => ({ 
       question: q, 
       selectedAnswer: null,
-      shuffledOptions: shuffleOptions(q.options, q.correctAnswer)
+      shuffledOptions: shuffleOptions(q.options, q.correctAnswer, q.noShuffle)
     })));
     setSubmitted(false);
   };

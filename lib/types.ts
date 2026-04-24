@@ -5,6 +5,7 @@ export interface Question {
   options: string[];
   correctAnswer: number;
   explanation?: string;
+  noShuffle?: boolean;
 }
 
 export type Mode = 'study' | 'test' | 'exam';

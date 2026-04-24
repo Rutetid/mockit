@@ -59,7 +59,7 @@ function TestContent() {
     setAnswers(shuffled.map(q => ({ 
       question: q, 
       selectedAnswer: null,
-      shuffledOptions: shuffleOptions(q.options, q.correctAnswer)
+      shuffledOptions: shuffleOptions(q.options, q.correctAnswer, q.noShuffle)
     })));
     setQuizStarted(true);
   }, [searchParams]);
@@ -89,7 +89,7 @@ function TestContent() {
     setAnswers(prev => prev.map(a => ({ 
       ...a, 
       selectedAnswer: null,
-      shuffledOptions: shuffleOptions(a.question.options, a.question.correctAnswer)
+      shuffledOptions: shuffleOptions(a.question.options, a.question.correctAnswer, a.question.noShuffle)
     })));
     setSubmitted(false);
   };
@@ -103,7 +103,7 @@ function TestContent() {
     setAnswers(wrongQuestions.map(q => ({ 
       question: q, 
       selectedAnswer: null,
-      shuffledOptions: shuffleOptions(q.options, q.correctAnswer)
+      shuffledOptions: shuffleOptions(q.options, q.correctAnswer, q.noShuffle)
     })));
     setSubmitted(false);
   };

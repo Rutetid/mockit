@@ -62,7 +62,7 @@ function StudyContent() {
     const shuffled = shuffleArray(filtered);
     setQuizQuestions(shuffled);
     setAnswers(shuffled.map(q => {
-      const shuffledOpts = shuffleOptions(q.options, q.correctAnswer);
+      const shuffledOpts = shuffleOptions(q.options, q.correctAnswer, q.noShuffle);
       const correctIndex = shuffledOpts.findIndex(o => o.isCorrect);
       return { question: q, selectedAnswer: null, isCorrect: false, showAnswer: false, shuffledOptions: shuffledOpts };
     }));
@@ -89,7 +89,7 @@ function StudyContent() {
       selectedAnswer: null, 
       isCorrect: false, 
       showAnswer: false,
-      shuffledOptions: shuffleOptions(a.question.options, a.question.correctAnswer)
+      shuffledOptions: shuffleOptions(a.question.options, a.question.correctAnswer, a.question.noShuffle)
     })));
     setShowResults(false);
   };
@@ -102,7 +102,7 @@ function StudyContent() {
       selectedAnswer: null,
       isCorrect: false,
       showAnswer: false,
-      shuffledOptions: shuffleOptions(q.options, q.correctAnswer)
+      shuffledOptions: shuffleOptions(q.options, q.correctAnswer, q.noShuffle)
     })));
     setShowResults(false);
   };
