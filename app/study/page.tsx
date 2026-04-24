@@ -74,6 +74,13 @@ function StudyContent() {
     setShowResults(false);
   };
 
+  const handleRetryWrong = () => {
+    const wrongQuestions = answers.filter(a => !a.isCorrect).map(a => a.question);
+    setQuizQuestions(wrongQuestions);
+    setAnswers(wrongQuestions.map(q => ({ question: q, selectedAnswer: null, isCorrect: false, showAnswer: false })));
+    setShowResults(false);
+  };
+
   const handleHome = () => {
     window.location.href = '/practice';
   };
@@ -102,8 +109,13 @@ function StudyContent() {
                 <div className="text-zinc-500 mt-2">Correct Answers</div>
               </div>
               <div className="flex gap-3">
-                <Button onClick={handleRetry} className="flex-1 bg-zinc-700 hover:bg-zinc-600 text-white border-none">Try Again</Button>
-                <Button onClick={handleHome} className="flex-1">Home</Button>
+                {correctCount < answers.length && (
+                  <Button onClick={handleRetryWrong} className="flex-1 bg-zinc-700 hover:bg-zinc-600 text-white border-none active:scale-95 transition-all">
+                    Retry Wrong ({answers.length - correctCount})
+                  </Button>
+                )}
+                <Button onClick={handleRetry} className="flex-1 bg-zinc-700 hover:bg-zinc-600 text-white border-none active:scale-95 transition-all">Try Again</Button>
+                <Button onClick={handleHome} className="flex-1 bg-zinc-700 hover:bg-zinc-600 text-white border-none active:scale-95 transition-all">Home</Button>
               </div>
             </CardContent>
           </Card>

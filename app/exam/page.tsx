@@ -73,6 +73,14 @@ export default function ExamPage() {
     setSubmitted(false);
   };
 
+  const handleRetryWrong = () => {
+    const wrongQuestions = answers.filter(a => a.selectedAnswer !== a.question.correctAnswer).map(a => a.question);
+    const wrongAnswers = wrongQuestions.map(q => ({ question: q, selectedAnswer: null }));
+    setAnswers(wrongAnswers);
+    setQuizQuestions(wrongQuestions);
+    setSubmitted(false);
+  };
+
   const handleHome = () => {
     window.location.href = '/practice';
   };
@@ -139,8 +147,13 @@ export default function ExamPage() {
                 <div className="text-zinc-500 mt-2">{correctCount} / {answers.length} correct</div>
               </div>
               <div className="flex gap-3">
-                <Button onClick={handleRetry} className="flex-1 bg-zinc-700 hover:bg-zinc-600 text-white border-none">Try Again</Button>
-                <Button onClick={handleHome} className="flex-1">Home</Button>
+                {correctCount < answers.length && (
+                  <Button onClick={handleRetryWrong} className="flex-1 bg-zinc-700 hover:bg-zinc-600 text-white border-none active:scale-95 transition-all">
+                    Retry Wrong ({answers.length - correctCount})
+                  </Button>
+                )}
+                <Button onClick={handleRetry} className="flex-1 bg-zinc-700 hover:bg-zinc-600 text-white border-none active:scale-95 transition-all">Try Again</Button>
+                <Button onClick={handleHome} className="flex-1 bg-zinc-700 hover:bg-zinc-600 text-white border-none active:scale-95 transition-all">Home</Button>
               </div>
             </CardContent>
           </Card>
