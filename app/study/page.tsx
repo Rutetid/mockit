@@ -11,6 +11,7 @@ import { Navbar } from '@/components/navbar';
 import { Confetti } from '@/components/confetti';
 import { questions as allQuestions } from '@/lib/questions';
 import { Question } from '@/lib/types';
+import { shuffleArray, shuffleOptions, type ShuffledOption } from '@/lib/utils';
 
 const optionLabels = ['A', 'B', 'C', 'D'];
 
@@ -19,6 +20,7 @@ interface AnsweredQuestion {
   selectedAnswer: number | null;
   isCorrect: boolean;
   showAnswer: boolean;
+  shuffledOptions: ShuffledOption[];
 }
 
 function StudyContent() {
@@ -44,40 +46,58 @@ function StudyContent() {
 
   useEffect(() => {
     const weeksParam = searchParams.get('weeks');
+    let filtered: Question[];
     if (weeksParam) {
       const weeks = weeksParam.split(',').map(Number);
-      const filtered = allQuestions.filter(q => weeks.includes(q.week));
-      setQuizQuestions(filtered);
-      setAnswers(filtered.map(q => ({ question: q, selectedAnswer: null, isCorrect: false, showAnswer: false })));
-      setQuizStarted(true);
+      filtered = allQuestions.filter(q => weeks.includes(q.week));
     } else {
-      setQuizQuestions(allQuestions);
-      setAnswers(allQuestions.map(q => ({ question: q, selectedAnswer: null, isCorrect: false, showAnswer: false })));
-      setQuizStarted(true);
+      filtered = allQuestions;
     }
+    const shuffled = shuffleArray(filtered);
+    setQuizQuestions(shuffled);
+    setAnswers(shuffled.map(q => {
+      const shuffledOpts = shuffleOptions(q.options, q.correctAnswer);
+      const correctIndex = shuffledOpts.findIndex(o => o.isCorrect);
+      return { question: q, selectedAnswer: null, isCorrect: false, showAnswer: false, shuffledOptions: shuffledOpts };
+    }));
+    setQuizStarted(true);
   }, [searchParams]);
 
   const handleSelectAnswer = (questionIndex: number, answerIndex: number) => {
+    const question = answers[questionIndex];
+    const isCorrect = question.shuffledOptions[answerIndex].isCorrect;
     setAnswers(prev => prev.map((a, i) => {
       if (i !== questionIndex) return a;
       return {
         ...a,
         selectedAnswer: answerIndex,
-        isCorrect: answerIndex === a.question.correctAnswer,
+        isCorrect: isCorrect,
         showAnswer: true,
       };
     }));
   };
 
   const handleRetry = () => {
-    setAnswers(prev => prev.map(a => ({ ...a, selectedAnswer: null, isCorrect: false, showAnswer: false })));
+    setAnswers(prev => prev.map(a => ({ 
+      ...a, 
+      selectedAnswer: null, 
+      isCorrect: false, 
+      showAnswer: false,
+      shuffledOptions: shuffleOptions(a.question.options, a.question.correctAnswer)
+    })));
     setShowResults(false);
   };
 
   const handleRetryWrong = () => {
     const wrongQuestions = answers.filter(a => !a.isCorrect).map(a => a.question);
     setQuizQuestions(wrongQuestions);
-    setAnswers(wrongQuestions.map(q => ({ question: q, selectedAnswer: null, isCorrect: false, showAnswer: false })));
+    setAnswers(wrongQuestions.map(q => ({
+      question: q,
+      selectedAnswer: null,
+      isCorrect: false,
+      showAnswer: false,
+      shuffledOptions: shuffleOptions(q.options, q.correctAnswer)
+    })));
     setShowResults(false);
   };
 
@@ -158,11 +178,11 @@ function StudyContent() {
                 <CardTitle className="text-base leading-relaxed text-white">{aq.question.question}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                {aq.question.options.map((option, optionIndex) => {
+                {aq.shuffledOptions.map((option, optionIndex) => {
                   let optionStyle = 'border-zinc-700 hover:border-zinc-500 hover:bg-zinc-800 text-zinc-300';
                   
                   if (aq.showAnswer) {
-                    if (optionIndex === aq.question.correctAnswer) {
+                    if (option.isCorrect) {
                       optionStyle = 'border-emerald-500 bg-emerald-500/10 text-emerald-400';
                     } else if (aq.selectedAnswer === optionIndex) {
                       optionStyle = 'border-red-500 bg-red-500/10 text-red-400';
@@ -181,7 +201,7 @@ function StudyContent() {
                       <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded bg-zinc-800 font-medium text-sm text-zinc-300">
                         {optionLabels[optionIndex]}
                       </span>
-                      <span className="flex-1 text-sm">{option}</span>
+                      <span className="flex-1 text-sm">{option.text}</span>
                     </button>
                   );
                 })}

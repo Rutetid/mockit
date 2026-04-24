@@ -1,4 +1,5 @@
 import { Question } from './types';
+import { shuffleArray } from './utils';
 
 export const questions: Question[] = [
   {
@@ -1367,8 +1368,7 @@ export function getQuestionsByWeek(week: number): Question[] {
 }
 
 export function getRandomQuestions(count: number): Question[] {
-  const shuffled = [...questions].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count);
+  return shuffleArray(questions).slice(0, count);
 }
 
 export function getAllQuestions(): Question[] {

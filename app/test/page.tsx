@@ -19,12 +19,14 @@ import { Navbar } from '@/components/navbar';
 import { Confetti } from '@/components/confetti';
 import { questions as allQuestions } from '@/lib/questions';
 import { Question } from '@/lib/types';
+import { shuffleArray, shuffleOptions, type ShuffledOption } from '@/lib/utils';
 
 const optionLabels = ['A', 'B', 'C', 'D'];
 
 interface AnsweredQuestion {
   question: Question;
   selectedAnswer: number | null;
+  shuffledOptions: ShuffledOption[];
 }
 
 function TestContent() {
@@ -52,8 +54,13 @@ function TestContent() {
     } else {
       filtered = allQuestions;
     }
-    setQuizQuestions(filtered);
-    setAnswers(filtered.map(q => ({ question: q, selectedAnswer: null })));
+    const shuffled = shuffleArray(filtered);
+    setQuizQuestions(shuffled);
+    setAnswers(shuffled.map(q => ({ 
+      question: q, 
+      selectedAnswer: null,
+      shuffledOptions: shuffleOptions(q.options, q.correctAnswer)
+    })));
     setQuizStarted(true);
   }, [searchParams]);
 
@@ -79,14 +86,25 @@ function TestContent() {
   };
 
   const handleRetry = () => {
-    window.location.reload();
+    setAnswers(prev => prev.map(a => ({ 
+      ...a, 
+      selectedAnswer: null,
+      shuffledOptions: shuffleOptions(a.question.options, a.question.correctAnswer)
+    })));
+    setSubmitted(false);
   };
 
   const handleRetryWrong = () => {
-    const wrongQuestions = answers.filter(a => a.selectedAnswer !== a.question.correctAnswer).map(a => a.question);
-    const wrongAnswers = wrongQuestions.map(q => ({ question: q, selectedAnswer: null }));
-    setAnswers(wrongAnswers);
+    const wrongQuestions = answers.filter(a => {
+      const correctIndex = a.shuffledOptions.findIndex(o => o.isCorrect);
+      return a.selectedAnswer !== correctIndex;
+    }).map(a => a.question);
     setQuizQuestions(wrongQuestions);
+    setAnswers(wrongQuestions.map(q => ({ 
+      question: q, 
+      selectedAnswer: null,
+      shuffledOptions: shuffleOptions(q.options, q.correctAnswer)
+    })));
     setSubmitted(false);
   };
 
@@ -94,7 +112,10 @@ function TestContent() {
     window.location.href = '/practice';
   };
 
-  const correctCount = answers.filter(a => a.selectedAnswer === a.question.correctAnswer).length;
+  const correctCount = answers.filter(a => {
+    const correctIndex = a.shuffledOptions.findIndex(o => o.isCorrect);
+    return a.selectedAnswer === correctIndex;
+  }).length;
   const answeredCount = answers.filter(a => a.selectedAnswer !== null).length;
   const progress = answers.length > 0 ? (answeredCount / answers.length) * 100 : 0;
   const allAnswered = answeredCount === answers.length;
@@ -137,7 +158,8 @@ function TestContent() {
 
           <div className="space-y-3">
             {answers.map((aq, questionIndex) => {
-              const isCorrect = aq.selectedAnswer === aq.question.correctAnswer;
+              const correctIndex = aq.shuffledOptions.findIndex(o => o.isCorrect);
+              const isCorrect = aq.selectedAnswer === correctIndex;
               return (
                 <Card key={aq.question.id} className={`${isCorrect ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-red-500/30 bg-red-500/5'}`}>
                   <CardContent className="py-4">
@@ -150,11 +172,13 @@ function TestContent() {
                     </div>
                     <p className="text-sm font-medium text-white mb-2">{aq.question.question}</p>
                     <p className="text-sm text-zinc-400">
-                      Your answer: <span className={isCorrect ? 'text-emerald-400' : 'text-red-400'}>{aq.selectedAnswer !== null ? aq.question.options[aq.selectedAnswer] : 'Not answered'}</span>
+                      Your answer: <span className={isCorrect ? 'text-emerald-400' : 'text-red-400'}>
+                        {aq.selectedAnswer !== null ? aq.shuffledOptions[aq.selectedAnswer].text : 'Not answered'}
+                      </span>
                     </p>
                     {!isCorrect && aq.selectedAnswer !== null && (
                       <p className="text-sm text-emerald-400 mt-1">
-                        Correct: {aq.question.options[aq.question.correctAnswer]}
+                        Correct: {aq.shuffledOptions[correctIndex].text}
                       </p>
                     )}
                   </CardContent>
@@ -218,7 +242,7 @@ function TestContent() {
                 <CardTitle className="text-base leading-relaxed text-white">{aq.question.question}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                {aq.question.options.map((option, optionIndex) => {
+                {aq.shuffledOptions.map((option, optionIndex) => {
                   const isSelected = aq.selectedAnswer === optionIndex;
                   return (
                     <button
@@ -233,7 +257,7 @@ function TestContent() {
                       <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded bg-zinc-800 font-medium text-sm text-zinc-300">
                         {optionLabels[optionIndex]}
                       </span>
-                      <span className="flex-1 text-sm">{option}</span>
+                      <span className="flex-1 text-sm">{option.text}</span>
                     </button>
                   );
                 })}
