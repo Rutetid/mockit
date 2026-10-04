@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Navbar } from '@/components/navbar';
 import { Confetti } from '@/components/confetti';
-import { questions as allQuestions } from '@/lib/questions';
+import { resolveSubjectId, getSubject } from '@/lib/subjects';
 import { Question } from '@/lib/types';
 import { shuffleArray, shuffleOptions, type ShuffledOption } from '@/lib/utils';
 
@@ -51,13 +51,14 @@ function StudyContent() {
   };
 
   useEffect(() => {
+    const subject = getSubject(resolveSubjectId(searchParams.get('subject')));
     const weeksParam = searchParams.get('weeks');
     let filtered: Question[];
     if (weeksParam) {
       const weeks = weeksParam.split(',').map(Number);
-      filtered = allQuestions.filter(q => weeks.includes(q.week));
+      filtered = subject.questions.filter(q => weeks.includes(q.week));
     } else {
-      filtered = allQuestions;
+      filtered = subject.questions;
     }
     const shuffled = shuffleArray(filtered);
     setQuizQuestions(shuffled);

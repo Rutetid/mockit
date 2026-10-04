@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -16,7 +17,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { getRandomQuestions } from '@/lib/questions';
+import { resolveSubjectId, getSubject } from '@/lib/subjects';
 import { Question } from '@/lib/types';
 import { shuffleArray, shuffleOptions, type ShuffledOption } from '@/lib/utils';
 
@@ -28,7 +29,9 @@ interface AnsweredQuestion {
   shuffledOptions: ShuffledOption[];
 }
 
-export default function ExamPage() {
+function ExamContent() {
+  const searchParams = useSearchParams();
+  const subject = getSubject(resolveSubjectId(searchParams.get('subject')));
   const [quizStarted, setQuizStarted] = useState(false);
   const [quizQuestions, setQuizQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<AnsweredQuestion[]>([]);
@@ -43,7 +46,7 @@ export default function ExamPage() {
   }, [submitted]);
 
   const handleStart = () => {
-    const questions = getRandomQuestions(75);
+    const questions = shuffleArray(subject.questions).slice(0, 75);
     setQuizQuestions(questions);
     setAnswers(questions.map(q => ({ 
       question: q, 
@@ -78,7 +81,7 @@ export default function ExamPage() {
     setAnswers(prev => prev.map(a => ({ 
       ...a, 
       selectedAnswer: null,
-      shuffledOptions: shuffleOptions(a.question.options, a.question.correctAnswer)
+      shuffledOptions: shuffleOptions(a.question.options, a.question.correctAnswer, a.question.noShuffle)
     })));
     setSubmitted(false);
   };
@@ -122,13 +125,13 @@ export default function ExamPage() {
           <Card className="bg-zinc-900 border-zinc-800">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl text-white">🎯 Exam Mode</CardTitle>
+              <p className="text-sm text-zinc-400 mt-1">{subject.title}</p>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="text-center py-4">
                 <div className="text-4xl font-bold text-white">75</div>
                 <div className="text-zinc-500 mt-2">Questions</div>
-                <p className="text-sm text-zinc-400 mt-4">Questions will be randomly selected from all available questions</p>
-              </div>
+                <p className="text-sm text-zinc-400 mt-4">Questions will be randomly selected from all available questions</p>              </div>
 
               <Button onClick={handleStart} className="w-full h-12 text-lg bg-[#C2410C] hover:bg-[#9A3412]">
                 Start Exam
@@ -295,5 +298,16 @@ export default function ExamPage() {
       </div>
     </main>
     </div>
+  );
+}
+export default function ExamPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#0C0C0C] pt-16 flex items-center justify-center">
+        <div className="text-zinc-500">Loading...</div>
+      </div>
+    }>
+      <ExamContent />
+    </Suspense>
   );
 }

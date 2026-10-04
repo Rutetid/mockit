@@ -1,7 +1,6 @@
-import { Question } from './types';
-import { shuffleArray } from './utils';
+import { Question } from '../types';
 
-export const questions: Question[] = [
+export const esdQuestions: Question[] = [
   {
     id: "w0-q1",
     week: 0,
@@ -1478,15 +1477,3 @@ export const questions: Question[] = [
     explanation: "",
   },
 ];
-
-export function getQuestionsByWeek(week: number): Question[] {
-  return questions.filter(q => q.week === week);
-}
-
-export function getRandomQuestions(count: number): Question[] {
-  return shuffleArray(questions).slice(0, count);
-}
-
-export function getAllQuestions(): Question[] {
-  return questions;
-}

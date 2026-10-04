@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Navbar } from '@/components/navbar';
+import { subjects } from '@/lib/subjects';
 
 const features = [
   {
@@ -18,13 +19,13 @@ const features = [
   {
     icon: '🎯',
     title: 'Exam Mode',
-    description: '75 random questions timed like the real exam. Test your readiness.',
+    description: '75 random questions like the real exam. Test your readiness.',
   },
 ];
 
 const stats = [
-  { value: '12', label: 'Weeks' },
-  { value: '120', label: 'Questions' },
+  { value: String(subjects.length), label: 'Subjects' },
+  { value: String(subjects.reduce((total, s) => total + s.questions.length, 0)), label: 'Questions' },
   { value: '3', label: 'Modes' },
 ];
 
