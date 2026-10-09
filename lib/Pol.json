@@ -103,12 +103,7 @@
     "id": "w1-q1",
     "week": 1,
     "question": "Learning is often seen as the contiguous causal effect of ____ on behavior.",
-    "options": [
-      "blood",
-      "bone density",
-      "trauma",
-      "experience"
-    ],
+    "options": ["blood", "bone density", "trauma", "experience"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -116,10 +111,7 @@
     "id": "w1-q2",
     "week": 1,
     "question": "In order to say that learning has occurred, a hidden change in behavior must occur.",
-    "options": [
-      "True",
-      "False"
-    ],
+    "options": ["True", "False"],
     "correctAnswer": 1,
     "explanation": ""
   },
@@ -127,12 +119,7 @@
     "id": "w1-q3",
     "week": 1,
     "question": "Which of the following is not a mental construct?",
-    "options": [
-      "skeleton",
-      "knowledge",
-      "representations",
-      "associations"
-    ],
+    "options": ["skeleton", "knowledge", "representations", "associations"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -140,12 +127,7 @@
     "id": "w1-q4",
     "week": 1,
     "question": "Learning changes the ___ structure of the brain through the process of continuous interactions between the learner and the external environment.",
-    "options": [
-      "physical",
-      "social",
-      "biological",
-      "none of the given"
-    ],
+    "options": ["physical", "social", "biological", "none of the given"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -166,12 +148,7 @@
     "id": "w1-q6",
     "week": 1,
     "question": "Watson's work included the famous Little Albert experiment in which he conditioned a small child to ___ a white rat.",
-    "options": [
-      "fear",
-      "love",
-      "hate",
-      "play with"
-    ],
+    "options": ["fear", "love", "hate", "play with"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -179,12 +156,7 @@
     "id": "w1-q7",
     "week": 1,
     "question": "Behaviorism dominated psychology for much of the early ___ century.",
-    "options": [
-      "20th",
-      "19th",
-      "18th",
-      "17th"
-    ],
+    "options": ["20th", "19th", "18th", "17th"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -218,26 +190,15 @@
     "id": "w1-q10",
     "week": 1,
     "question": "Instrumental conditioning is an example of ___ learning.",
-    "options": [
-      "sensitization",
-      "habituation",
-      "associative",
-      "meaningful"
-    ],
+    "options": ["sensitization", "habituation", "associative", "meaningful"],
     "correctAnswer": 2,
     "explanation": ""
-  }
-,
+  },
   {
     "id": "w2-q1",
     "week": 2,
     "question": "The three major types of learning described by ___ psychology are classical conditioning, operant conditioning and observational learning.",
-    "options": [
-      "cognitive",
-      "behavioral",
-      "emotional",
-      "evolutionary"
-    ],
+    "options": ["cognitive", "behavioral", "emotional", "evolutionary"],
     "correctAnswer": 1,
     "explanation": ""
   },
@@ -284,10 +245,7 @@
     "id": "w2-q5",
     "week": 2,
     "question": "Higher-order conditioning is intrinsically weaker than its first-order counterpart.",
-    "options": [
-      "True",
-      "False"
-    ],
+    "options": ["True", "False"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -295,12 +253,7 @@
     "id": "w2-q6",
     "week": 2,
     "question": "____ is the process of gradually changing the quality of a response.",
-    "options": [
-      "Shaping",
-      "Modeling",
-      "Cueing",
-      "Shifting"
-    ],
+    "options": ["Shaping", "Modeling", "Cueing", "Shifting"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -321,12 +274,7 @@
     "id": "w2-q8",
     "week": 2,
     "question": "___ intelligence is the ability to perceive the visual–spatial world accurately and involves sensitivity to color, line, shape, form, space, and the potential for recognizing and manipulating the patterns of spaces.",
-    "options": [
-      "Interpersonal",
-      "Spatial",
-      "Bodily-kinesthetic",
-      "Linguistic"
-    ],
+    "options": ["Interpersonal", "Spatial", "Bodily-kinesthetic", "Linguistic"],
     "correctAnswer": 1,
     "explanation": ""
   },
@@ -347,26 +295,15 @@
     "id": "w2-q10",
     "week": 2,
     "question": "Which of the following is not a kind of product in the structure of intellect model?",
-    "options": [
-      "symbolic",
-      "classes",
-      "systems",
-      "implications"
-    ],
+    "options": ["symbolic", "classes", "systems", "implications"],
     "correctAnswer": 0,
     "explanation": ""
-  }
-,
+  },
   {
     "id": "w3-q1",
     "week": 3,
     "question": "The connections between nerves cells are called ___.",
-    "options": [
-      "systems",
-      "syntaxes",
-      "neurons",
-      "synapses"
-    ],
+    "options": ["systems", "syntaxes", "neurons", "synapses"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -387,12 +324,7 @@
     "id": "w3-q3",
     "week": 3,
     "question": "Calling back the stored information in response to some cue for use in a process or activity is called ___.",
-    "options": [
-      "Retrieval",
-      "Recall",
-      "Recollection",
-      "All of the given"
-    ],
+    "options": ["Retrieval", "Recall", "Recollection", "All of the given"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -413,10 +345,7 @@
     "id": "w3-q5",
     "week": 3,
     "question": "The Information Processing View of Learning assumes that there are limits to how much information can be processed at each stage.",
-    "options": [
-      "True",
-      "False"
-    ],
+    "options": ["True", "False"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -424,12 +353,7 @@
     "id": "w3-q6",
     "week": 3,
     "question": "The Information Processing View of Learning assumes that information process is involved in ___",
-    "options": [
-      "forgetting",
-      "remembering",
-      "perceiving",
-      "All of the given"
-    ],
+    "options": ["forgetting", "remembering", "perceiving", "All of the given"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -437,12 +361,7 @@
     "id": "w3-q7",
     "week": 3,
     "question": "The capacity of the sensory register is ___.",
-    "options": [
-      "very small",
-      "very large",
-      "7+/-2 chunks",
-      "unlimited"
-    ],
+    "options": ["very small", "very large", "7+/-2 chunks", "unlimited"],
     "correctAnswer": 1,
     "explanation": ""
   },
@@ -450,12 +369,7 @@
     "id": "w3-q8",
     "week": 3,
     "question": "Most children do not begin to engage in the process of rehearsal on their own until about age ___.",
-    "options": [
-      "seven",
-      "two",
-      "thirteen",
-      "one"
-    ],
+    "options": ["seven", "two", "thirteen", "one"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -484,18 +398,12 @@
     ],
     "correctAnswer": 2,
     "explanation": ""
-  }
-,
+  },
   {
     "id": "w4-q1",
     "week": 4,
     "question": "___ thinking is the ability to create mental representations of objects, places, events, or people in your mind.",
-    "options": [
-      "General",
-      "Creative",
-      "Divergent",
-      "Symbolic"
-    ],
+    "options": ["General", "Creative", "Divergent", "Symbolic"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -503,12 +411,7 @@
     "id": "w4-q2",
     "week": 4,
     "question": "We compare new information to our ___ of the person, place, or thing, so we know how to categorize the new information mentally.",
-    "options": [
-      "protofit",
-      "protobite",
-      "prototype",
-      "none of the given"
-    ],
+    "options": ["protofit", "protobite", "prototype", "none of the given"],
     "correctAnswer": 2,
     "explanation": ""
   },
@@ -529,12 +432,7 @@
     "id": "w4-q4",
     "week": 4,
     "question": "Mental images are ___.",
-    "options": [
-      "Auditory",
-      "Visual",
-      "Gustatory",
-      "All of the given"
-    ],
+    "options": ["Auditory", "Visual", "Gustatory", "All of the given"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -542,12 +440,7 @@
     "id": "w4-q5",
     "week": 4,
     "question": "___ organize complex phenomena into simpler, easily understandable, and usable categories and help to solve our problems.",
-    "options": [
-      "Concepts",
-      "Propositions",
-      "Constructs",
-      "Components"
-    ],
+    "options": ["Concepts", "Propositions", "Constructs", "Components"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -555,12 +448,7 @@
     "id": "w4-q6",
     "week": 4,
     "question": "The lowermost level of Bloom’s taxonomy is ___.",
-    "options": [
-      "remember",
-      "apply",
-      "understand",
-      "analyze"
-    ],
+    "options": ["remember", "apply", "understand", "analyze"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -607,16 +495,10 @@
     "id": "w4-q10",
     "week": 4,
     "question": "The inspiration phase of the creative thinking process refers to the ___ stage.",
-    "options": [
-      "Incubation",
-      "Insight",
-      "Evaluation",
-      "Preparation"
-    ],
+    "options": ["Incubation", "Insight", "Evaluation", "Preparation"],
     "correctAnswer": 3,
     "explanation": ""
-  }
-,
+  },
   {
     "id": "w5-q1",
     "week": 5,
@@ -634,12 +516,7 @@
     "id": "w5-q2",
     "week": 5,
     "question": "The term “motivation” comes from a ___ word.",
-    "options": [
-      "Greek",
-      "Latin",
-      "Hindi",
-      "Bengali"
-    ],
+    "options": ["Greek", "Latin", "Hindi", "Bengali"],
     "correctAnswer": 1,
     "explanation": ""
   },
@@ -647,12 +524,7 @@
     "id": "w5-q3",
     "week": 5,
     "question": "It is called extrinsic motivation if causal factor is ___.",
-    "options": [
-      "curiosity",
-      "social pressure",
-      "self-satisfaction",
-      "needs"
-    ],
+    "options": ["curiosity", "social pressure", "self-satisfaction", "needs"],
     "correctAnswer": 1,
     "explanation": ""
   },
@@ -673,12 +545,7 @@
     "id": "w5-q5",
     "week": 5,
     "question": "___ proposed that there are three primary drives that drive human behavior.",
-    "options": [
-      "Hull",
-      "Watson",
-      "Piaget",
-      "Gestalt"
-    ],
+    "options": ["Hull", "Watson", "Piaget", "Gestalt"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -686,12 +553,7 @@
     "id": "w5-q6",
     "week": 5,
     "question": "Expectancy Theory of Motivation was developed by ___.",
-    "options": [
-      "Vroom",
-      "Hull",
-      "Murray",
-      "None of the given"
-    ],
+    "options": ["Vroom", "Hull", "Murray", "None of the given"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -699,12 +561,7 @@
     "id": "w5-q7",
     "week": 5,
     "question": "An example of ___ is thinking, “If I work hard I can achieve the targets my boss has set for me”.",
-    "options": [
-      "purposeful",
-      "valence",
-      "instrumentality",
-      "expectancy"
-    ],
+    "options": ["purposeful", "valence", "instrumentality", "expectancy"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -712,12 +569,7 @@
     "id": "w5-q8",
     "week": 5,
     "question": "In SMART goals, T stands for ___.",
-    "options": [
-      "Temporary",
-      "Time-based",
-      "Tough",
-      "Testing"
-    ],
+    "options": ["Temporary", "Time-based", "Tough", "Testing"],
     "correctAnswer": 1,
     "explanation": ""
   },
@@ -725,12 +577,7 @@
     "id": "w5-q9",
     "week": 5,
     "question": "Friendship is a ___ need in Maslow’s hierarchy.",
-    "options": [
-      "Love and belonging",
-      "Esteem",
-      "Physiological",
-      "Safety"
-    ],
+    "options": ["Love and belonging", "Esteem", "Physiological", "Safety"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -746,8 +593,7 @@
     ],
     "correctAnswer": 3,
     "explanation": ""
-  }
-,
+  },
   {
     "id": "w6-q1",
     "week": 6,
@@ -765,12 +611,7 @@
     "id": "w6-q2",
     "week": 6,
     "question": "Emotional intelligence can be considered a type of ___ intelligence.",
-    "options": [
-      "academic",
-      "genetic",
-      "social",
-      "external"
-    ],
+    "options": ["academic", "genetic", "social", "external"],
     "correctAnswer": 2,
     "explanation": ""
   },
@@ -817,12 +658,7 @@
     "id": "w6-q6",
     "week": 6,
     "question": "___ suggests that 10 distinct components provide the scaffolding of emotionally and socially intelligent behaviors:",
-    "options": [
-      "Bar-On",
-      "Goleman",
-      "Salovey",
-      "Mayer"
-    ],
+    "options": ["Bar-On", "Goleman", "Salovey", "Mayer"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -830,12 +666,7 @@
     "id": "w6-q7",
     "week": 6,
     "question": "Which of the following is a facilitator of EQ?",
-    "options": [
-      "optimism",
-      "happiness",
-      "independence",
-      "all of the given"
-    ],
+    "options": ["optimism", "happiness", "independence", "all of the given"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -877,8 +708,7 @@
     ],
     "correctAnswer": 1,
     "explanation": ""
-  }
-,
+  },
   {
     "id": "w7-q1",
     "week": 7,
@@ -896,12 +726,7 @@
     "id": "w7-q2",
     "week": 7,
     "question": "Manual or physical skills come under ___ component of Bloom’s taxonomy.",
-    "options": [
-      "Cognitive",
-      "Affective",
-      "Psychomotor",
-      "Physical"
-    ],
+    "options": ["Cognitive", "Affective", "Psychomotor", "Physical"],
     "correctAnswer": 2,
     "explanation": ""
   },
@@ -909,12 +734,7 @@
     "id": "w7-q3",
     "week": 7,
     "question": "Reflection, learning and education was explored by ___.",
-    "options": [
-      "Carl Rogers",
-      "John Watson",
-      "Benjamin Bloom",
-      "John Dewey"
-    ],
+    "options": ["Carl Rogers", "John Watson", "Benjamin Bloom", "John Dewey"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -922,12 +742,7 @@
     "id": "w7-q4",
     "week": 7,
     "question": "The principles of ___ refer to how close in time two events must be for a bond to be formed.",
-    "options": [
-      "behavior",
-      "reinforcement",
-      "repetition",
-      "contiguity"
-    ],
+    "options": ["behavior", "reinforcement", "repetition", "contiguity"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -948,12 +763,7 @@
     "id": "w7-q6",
     "week": 7,
     "question": "The ___ orientation to learning has a quality of personal involvement—the whole person in both feeling and cognitive aspects being in the learning event.",
-    "options": [
-      "behavioral",
-      "cognitive",
-      "humanistic",
-      "social"
-    ],
+    "options": ["behavioral", "cognitive", "humanistic", "social"],
     "correctAnswer": 2,
     "explanation": ""
   },
@@ -961,12 +771,7 @@
     "id": "w7-q7",
     "week": 7,
     "question": "Learning through play is ___ learning.",
-    "options": [
-      "primary",
-      "secondary",
-      "passive",
-      "active"
-    ],
+    "options": ["primary", "secondary", "passive", "active"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -974,12 +779,7 @@
     "id": "w7-q8",
     "week": 7,
     "question": "People with ___ learning style are prone to sorting their ideas after speaking, rather than thinking ideas through before.",
-    "options": [
-      "logical",
-      "solitary",
-      "visual",
-      "auditory"
-    ],
+    "options": ["logical", "solitary", "visual", "auditory"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -1000,26 +800,15 @@
     "id": "w7-q10",
     "week": 7,
     "question": "In ADDIE model, I stand for ___.",
-    "options": [
-      "instruction",
-      "implementation",
-      "integration",
-      "induction"
-    ],
+    "options": ["instruction", "implementation", "integration", "induction"],
     "correctAnswer": 1,
     "explanation": ""
-  }
-,
+  },
   {
     "id": "w8-q1",
     "week": 8,
     "question": "The word ‘pedagogy’ has been derived from the ___ word “pedagogue”.",
-    "options": [
-      "Latin",
-      "Sanskrit",
-      "Greek",
-      "English"
-    ],
+    "options": ["Latin", "Sanskrit", "Greek", "English"],
     "correctAnswer": 2,
     "explanation": ""
   },
@@ -1040,10 +829,7 @@
     "id": "w8-q3",
     "week": 8,
     "question": "Pedagogy can enhance the student-teacher relationship.",
-    "options": [
-      "True",
-      "False"
-    ],
+    "options": ["True", "False"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -1064,12 +850,7 @@
     "id": "w8-q5",
     "week": 8,
     "question": "The Pedagogical Model provides an overview of the learning cycle and breaks it down into ___ domains or phases of instruction.",
-    "options": [
-      "five",
-      "three",
-      "two",
-      "seven"
-    ],
+    "options": ["five", "three", "two", "seven"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -1077,12 +858,7 @@
     "id": "w8-q6",
     "week": 8,
     "question": "Which of the following is not a type of inquiry-based approach?",
-    "options": [
-      "confrontation",
-      "structure",
-      "guided",
-      "open"
-    ],
+    "options": ["confrontation", "structure", "guided", "open"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -1090,12 +866,7 @@
     "id": "w8-q7",
     "week": 8,
     "question": "In experiential learning, students are engaged ___.",
-    "options": [
-      "intellectually",
-      "soulfully",
-      "socially",
-      "all of the given"
-    ],
+    "options": ["intellectually", "soulfully", "socially", "all of the given"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -1116,12 +887,7 @@
     "id": "w8-q9",
     "week": 8,
     "question": "People with a ___ learning style can often act on “gut feeling” and will rely on others' analysis rather than their own.",
-    "options": [
-      "accommodating",
-      "converging",
-      "diverging",
-      "assimilating"
-    ],
+    "options": ["accommodating", "converging", "diverging", "assimilating"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -1129,26 +895,15 @@
     "id": "w8-q10",
     "week": 8,
     "question": "According to the ___ principle, students learn better from animation and narration than from animation and on-screen text.",
-    "options": [
-      "multimedia",
-      "modality",
-      "coherence",
-      "temporal contiguity"
-    ],
+    "options": ["multimedia", "modality", "coherence", "temporal contiguity"],
     "correctAnswer": 1,
     "explanation": ""
-  }
-,
+  },
   {
     "id": "w9-q1",
     "week": 9,
     "question": "E-learning is any form of ___.",
-    "options": [
-      "teaching",
-      "training",
-      "tutoring",
-      "all of the given"
-    ],
+    "options": ["teaching", "training", "tutoring", "all of the given"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -1169,10 +924,7 @@
     "id": "w9-q3",
     "week": 9,
     "question": "E-learning is a synonym of audio-visual learning, multimedia learning, and distance learning.",
-    "options": [
-      "True",
-      "False"
-    ],
+    "options": ["True", "False"],
     "correctAnswer": 1,
     "explanation": ""
   },
@@ -1180,12 +932,7 @@
     "id": "w9-q4",
     "week": 9,
     "question": "Which of the following is not a type of e-learning?",
-    "options": [
-      "text-driven",
-      "interactive",
-      "simulation",
-      "physical"
-    ],
+    "options": ["text-driven", "interactive", "simulation", "physical"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -1232,12 +979,7 @@
     "id": "w9-q8",
     "week": 9,
     "question": "___ learning is the crucial determinant of successful e-learning.",
-    "options": [
-      "passive",
-      "retrospective",
-      "social",
-      "active"
-    ],
+    "options": ["passive", "retrospective", "social", "active"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -1245,12 +987,7 @@
     "id": "w9-q9",
     "week": 9,
     "question": "The brain can process 36,000 visual cues per___.",
-    "options": [
-      "hour",
-      "second",
-      "day",
-      "year"
-    ],
+    "options": ["hour", "second", "day", "year"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -1266,18 +1003,12 @@
     ],
     "correctAnswer": 0,
     "explanation": ""
-  }
-,
+  },
   {
     "id": "w10-q1",
     "week": 10,
     "question": "During Covid-19 the world was busy in preparing 1.5 billion learners for the new normal, i.e., ___ learning.",
-    "options": [
-      "ineffective",
-      "physical",
-      "remote",
-      "experiential"
-    ],
+    "options": ["ineffective", "physical", "remote", "experiential"],
     "correctAnswer": 2,
     "explanation": ""
   },
@@ -1298,12 +1029,7 @@
     "id": "w10-q3",
     "week": 10,
     "question": "The typical picture of a teacher being a dispenser of knowledge to the students has been replaced by that of a ___.",
-    "options": [
-      "obstructor",
-      "parent",
-      "friend",
-      "facilitator"
-    ],
+    "options": ["obstructor", "parent", "friend", "facilitator"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -1324,12 +1050,7 @@
     "id": "w10-q5",
     "week": 10,
     "question": "Participatory education demands ___ so as to build a needs-based approach to teaching.",
-    "options": [
-      "creativity",
-      "stubbornness",
-      "reward",
-      "none of the given"
-    ],
+    "options": ["creativity", "stubbornness", "reward", "none of the given"],
     "correctAnswer": 0,
     "explanation": ""
   },
@@ -1337,10 +1058,7 @@
     "id": "w10-q6",
     "week": 10,
     "question": "Students who consider intelligence as a malleable entity tend to focus on their obstacles instead of goals.",
-    "options": [
-      "True",
-      "False"
-    ],
+    "options": ["True", "False"],
     "correctAnswer": 1,
     "explanation": ""
   },
@@ -1361,12 +1079,7 @@
     "id": "w10-q8",
     "week": 10,
     "question": "___ feedback to students is important for learning.",
-    "options": [
-      "Unclear",
-      "Late",
-      "Harsh",
-      "Explanatory"
-    ],
+    "options": ["Unclear", "Late", "Harsh", "Explanatory"],
     "correctAnswer": 3,
     "explanation": ""
   },
@@ -1387,13 +1100,203 @@
     "id": "w10-q10",
     "week": 10,
     "question": "The vast majority of formative assessment is___.",
+    "options": ["Formal", "Incorrect", "Written", "informal"],
+    "correctAnswer": 3,
+    "explanation": ""
+  },
+  {
+    "id": "w11-q1",
+    "week": 11,
+    "question": "Social cognition has a protracted development through infancy to ___.",
+    "options": ["teenage", "old-age", "adulthood", "death"],
+    "correctAnswer": 2,
+    "explanation": ""
+  },
+  {
+    "id": "w11-q2",
+    "week": 11,
+    "question": "Which of the following abilities comes under social cognition?",
     "options": [
-      "Formal",
-      "Incorrect",
-      "Written",
-      "informal"
+      "Face processing",
+      "Joint attention",
+      "Theory of mind",
+      "All of the given"
     ],
     "correctAnswer": 3,
+    "explanation": ""
+  },
+  {
+    "id": "w11-q3",
+    "week": 11,
+    "question": "Under social cognition, abilities involved in affective processing are often called ___.",
+    "options": ["hot", "cold", "white", "black"],
+    "correctAnswer": 0,
+    "explanation": ""
+  },
+  {
+    "id": "w11-q4",
+    "week": 11,
+    "question": "Social schemas refer to people's mental representations of social ___.",
+    "options": ["values", "memories", "skills", "patterns"],
+    "correctAnswer": 3,
+    "explanation": ""
+  },
+  {
+    "id": "w11-q5",
+    "week": 11,
+    "question": "During the earliest stages of development, children are very ___-centric. They see the world from their own perspective and struggle to think about how other people may view the world.",
+    "options": ["selfish", "ego", "conscious", "emotional"],
+    "correctAnswer": 1,
+    "explanation": ""
+  },
+  {
+    "id": "w11-q6",
+    "week": 11,
+    "question": "A theory of mind refers to a person's ability to understand and think about the ___ of other people.",
+    "options": ["behaviors", "family backgrounds", "mental states", "language"],
+    "correctAnswer": 2,
+    "explanation": ""
+  },
+  {
+    "id": "w11-q7",
+    "week": 11,
+    "question": "The same social behavior in one cultural setting might have a very different meaning and interpretation if it were to occur or be observed in another culture.",
+    "options": ["True", "False"],
+    "correctAnswer": 0,
+    "explanation": ""
+  },
+  {
+    "id": "w11-q8",
+    "week": 11,
+    "question": "Social cognitive theory by Bandura focuses on concepts of ___.",
+    "options": [
+      "self-efficacy",
+      "modeling",
+      "observational learning",
+      "all of the given"
+    ],
+    "correctAnswer": 3,
+    "explanation": ""
+  },
+  {
+    "id": "w11-q9",
+    "week": 11,
+    "question": "The central tenet of Bandura’s social-cognitive theory is that people seek to develop a sense of ___ over the important events in their lives.",
+    "options": ["agency", "dependency", "attachment", "emotion"],
+    "correctAnswer": 0,
+    "explanation": ""
+  },
+  {
+    "id": "w11-q10",
+    "week": 11,
+    "question": "___ hypothesis suggests that social processes influence how information is selected, organized, integrated, and retrieved.",
+    "options": [
+      "activation",
+      "cognitive influence",
+      "interaction",
+      "social cue strength"
+    ],
+    "correctAnswer": 1,
+    "explanation": ""
+  },
+  {
+    "id": "w12-q1",
+    "week": 12,
+    "question": "Sustainability in economic sustainability is ___.",
+    "options": [
+      "multidimensional",
+      "bidimensional",
+      "unidimensional",
+      "none of the given"
+    ],
+    "correctAnswer": 0,
+    "explanation": ""
+  },
+  {
+    "id": "w12-q2",
+    "week": 12,
+    "question": "The term \"sustainable development\" was first mentioned in a book related to the 1972 UN Stockholm conference on ___.",
+    "options": ["water", "poverty", "economic crisis", "human environment"],
+    "correctAnswer": 3,
+    "explanation": ""
+  },
+  {
+    "id": "w12-q3",
+    "week": 12,
+    "question": "Environmental sustainability focuses on impacts of processes, products and services on ___.",
+    "options": ["water", "biodiversity", "human health", "all of the given"],
+    "correctAnswer": 3,
+    "explanation": ""
+  },
+  {
+    "id": "w12-q4",
+    "week": 12,
+    "question": "Which of the following does not come under social sustainability?",
+    "options": [
+      "Labour practices",
+      "Revenue generation",
+      "Human rights",
+      "Business ethics"
+    ],
+    "correctAnswer": 1,
+    "explanation": ""
+  },
+  {
+    "id": "w12-q5",
+    "week": 12,
+    "question": "SDG ___ focuses on clean water and sanitation.",
+    "options": ["1", "17", "6", "3"],
+    "correctAnswer": 2,
+    "explanation": ""
+  },
+  {
+    "id": "w12-q6",
+    "week": 12,
+    "question": "SDG 16 focuses on ___.",
+    "options": ["No poverty", "No hunger", "Good health", "Peace and justice"],
+    "correctAnswer": 3,
+    "explanation": ""
+  },
+  {
+    "id": "w12-q7",
+    "week": 12,
+    "question": "On 20 October 2020, the Higher Education Sustainability Initiative (HESI) raised the flag of higher education as a driver for sustainable development and inclusive societies on the first day of the ___ 2020.",
+    "options": [
+      "National Sustainability Meeting",
+      "National Teachers Meeting",
+      "Global Childrens' Meeting",
+      "Global Education Meeting"
+    ],
+    "correctAnswer": 3,
+    "explanation": ""
+  },
+  {
+    "id": "w12-q8",
+    "week": 12,
+    "question": "Education is related to all SDGs.",
+    "options": ["True", "False"],
+    "correctAnswer": 0,
+    "explanation": ""
+  },
+  {
+    "id": "w12-q9",
+    "week": 12,
+    "question": "Successful implementation of ESD requires a shift in focus from ___.",
+    "options": [
+      "teaching to learning",
+      "learning to teaching",
+      "reading to speaking",
+      "knowing to ignoring"
+    ],
+    "correctAnswer": 0,
+    "explanation": ""
+  },
+  {
+    "id": "w12-q10",
+    "week": 12,
+    "question": "___ competency is the ability to reflect on one’s own role in the local community and (global) society.",
+    "options": ["collaboration", "self-awareness", "strategic", "normative"],
+    "correctAnswer": 1,
     "explanation": ""
   }
 ]
