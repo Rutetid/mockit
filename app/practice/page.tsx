@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -11,17 +11,38 @@ import {
   getSubjectWeeks,
   resolveSubjectId,
   storeSubjectId,
+  DEFAULT_SUBJECT_ID,
 } from '@/lib/subjects';
 
 type Mode = 'study' | 'test' | 'exam';
 
 function PracticeContent() {
   const searchParams = useSearchParams();
-  const [subjectId, setSubjectId] = useState<string | null>(null);
+  const [subjectId, setSubjectId] = useState<string>(DEFAULT_SUBJECT_ID);
   const [selectedWeeks, setSelectedWeeks] = useState<number[]>([]);
   const [selectedMode, setSelectedMode] = useState<Mode | null>(null);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const subject = getSubject(subjectId);
+
+  useEffect(() => {
+    if (!dropdownOpen) return;
+    const handlePointerDown = (e: PointerEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setDropdownOpen(false);
+    };
+    document.addEventListener('pointerdown', handlePointerDown);
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [dropdownOpen]);
 
   useEffect(() => {
     const resolved = resolveSubjectId(searchParams.get('subject'));
@@ -97,29 +118,98 @@ function PracticeContent() {
             </div>
           </div>
 
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-zinc-900 border-zinc-800 overflow-visible">
             <CardHeader className="pb-3">
               <CardTitle className="text-lg text-white">Select Subject</CardTitle>
             </CardHeader>
-            <CardContent className="grid grid-cols-2 gap-3">
-              {subjects.map(s => {
-                const isSelected = s.id === subjectId;
-                return (
-                  <button
-                    key={s.id}
-                    onClick={() => handleSelectSubject(s.id)}
-                    className={`p-4 rounded-xl border-2 transition-all text-left ${
-                      isSelected
-                        ? 'border-[#C2410C] bg-[#C2410C]/10'
-                        : 'border-zinc-700 hover:border-zinc-500'
-                    }`}
+            <CardContent className="space-y-2">
+              <div className="relative z-40" ref={dropdownRef}>
+                <button
+                  type="button"
+                  id="subject-select"
+                  onClick={() => setDropdownOpen(open => !open)}
+                  aria-haspopup="listbox"
+                  aria-expanded={dropdownOpen}
+                  className="relative w-full h-12 px-4 pr-10 rounded-xl bg-zinc-800 border border-zinc-700 text-white text-sm font-medium flex items-center gap-2 text-left hover:border-zinc-500 focus:outline-none focus:border-[#C2410C] transition-colors cursor-pointer"
+                >
+                  <span aria-hidden="true">{subject.icon}</span>
+                  <span className="flex-1 truncate">{subject.title}</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className={`absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
+                    aria-hidden="true"
                   >
-                    <div className="text-2xl mb-1">{s.icon}</div>
-                    <div className="text-sm font-medium text-white leading-snug">{s.title}</div>
-                    <div className="text-xs text-zinc-500 mt-1">{s.questions.length} questions</div>
-                  </button>
-                );
-              })}
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+
+                {dropdownOpen && (
+                  <ul
+                    role="listbox"
+                    aria-label="Select subject"
+                    className="absolute left-0 right-0 top-full mt-2 z-40 rounded-xl border border-zinc-700 bg-zinc-800 shadow-2xl shadow-black/50 overflow-hidden"
+                  >
+                    {subjects.map((s, index) => {
+                      const isSelected = s.id === subjectId;
+                      return (
+                        <li key={s.id}>
+                          {index > 0 && <div className="h-px bg-zinc-700/60" />}
+                          <button
+                            type="button"
+                            role="option"
+                            aria-selected={isSelected}
+                            onClick={() => {
+                              handleSelectSubject(s.id);
+                              setDropdownOpen(false);
+                            }}
+                            className={`w-full px-4 py-3 flex items-center gap-3 text-left transition-colors ${
+                              isSelected ? 'bg-[#C2410C]/10' : 'hover:bg-zinc-700/40'
+                            }`}
+                          >
+                            <span className="text-lg" aria-hidden="true">{s.icon}</span>
+                            <span className="flex-1 min-w-0">
+                              <span className={`block text-sm font-medium ${isSelected ? 'text-[#F97316]' : 'text-white'}`}>
+                                {s.title}
+                              </span>
+                              <span className="block text-xs text-zinc-500">
+                                {s.questions.length} questions
+                              </span>
+                            </span>
+                            {isSelected && (
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="3"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="text-[#F97316] flex-shrink-0"
+                                aria-hidden="true"
+                              >
+                                <path d="M20 6 9 17l-5-5" />
+                              </svg>
+                            )}
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </div>
+              <p className="text-xs text-zinc-500">
+                {subject.questions.length} questions · Weeks {availableWeeks[0]}–{availableWeeks[availableWeeks.length - 1]}
+              </p>
             </CardContent>
           </Card>
 

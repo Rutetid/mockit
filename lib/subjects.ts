@@ -27,7 +27,7 @@ export const subjects: Subject[] = [
   },
 ];
 
-export const DEFAULT_SUBJECT_ID = 'esd';
+export const DEFAULT_SUBJECT_ID = 'pol';
 
 const STORAGE_KEY = 'mockit.subject';
 

@@ -8,7 +8,7 @@ A modern, mobile-friendly practice exam web application for MOOC exam preparatio
 - **Study Mode** - Practice with instant feedback as you answer each question
 - **Test Mode** - Answer all questions and submit to see your results
 - **Exam Mode** - Simulate the real exam with 75 random questions
-- **240+ Questions** - 10 questions per week across all available weeks
+- **260 Questions** - 10 questions per week, weeks 0–12 in every subject
 - **Dark Theme** - Easy on the eyes, modern design
 - **Mobile-Friendly** - Practice anywhere on any device
 
@@ -16,8 +16,8 @@ A modern, mobile-friendly practice exam web application for MOOC exam preparatio
 
 | Subject | Id | Questions | Weeks |
 |---|---|---|---|
+| Psychology of Learning *(default)* | `pol` | 130 | 0–12 |
 | Education for Sustainable Development | `esd` | 130 | 0–12 |
-| Psychology of Learning | `pol` | 110 | 0–10 (11–12 pending) |
 
 ## Getting Started
 
@@ -98,8 +98,8 @@ Subjects are registered in `lib/subjects.ts`:
 ```
 
 The selected subject is stored in `localStorage` (`mockit.subject`) and reused
-automatically the next time the app is opened. A `?subject=<id>` URL parameter
-overrides it.
+automatically the next time the app is opened (defaults to `pol` on first
+visit). A `?subject=<id>` URL parameter overrides it.
 
 ## Adding Questions
 
