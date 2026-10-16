@@ -16,11 +16,14 @@ import {
 
 type Mode = 'study' | 'test' | 'exam';
 
+const NOTICE_KEY = 'mockit.notice.week12';
+
 function PracticeContent() {
   const searchParams = useSearchParams();
   const [subjectId, setSubjectId] = useState<string>(DEFAULT_SUBJECT_ID);
   const [selectedWeeks, setSelectedWeeks] = useState<number[]>([]);
   const [selectedMode, setSelectedMode] = useState<Mode | null>(null);
+  const [showNotice, setShowNotice] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -52,7 +55,21 @@ function PracticeContent() {
     if (weeksParam) {
       setSelectedWeeks(weeksParam.split(',').map(Number).filter(w => weeks.includes(w)));
     }
+    try {
+      if (!window.localStorage.getItem(NOTICE_KEY)) setShowNotice(true);
+    } catch {
+      setShowNotice(true);
+    }
   }, [searchParams]);
+
+  const dismissNotice = () => {
+    setShowNotice(false);
+    try {
+      window.localStorage.setItem(NOTICE_KEY, '1');
+    } catch {
+      // storage unavailable — notice will simply show again
+    }
+  };
 
   const handleSelectSubject = (id: string) => {
     if (id === subjectId) return;
@@ -117,6 +134,26 @@ function PracticeContent() {
               <span>✨</span>
             </div>
           </div>
+
+          {showNotice && (
+            <div
+              role="status"
+              className="flex items-start gap-3 p-4 rounded-xl border border-[#C2410C]/40 bg-[#C2410C]/10"
+            >
+              <span className="text-base leading-none mt-0.5" aria-hidden="true">📢</span>
+              <p className="flex-1 text-sm text-orange-200 leading-relaxed">
+                Week 12 has been updated, thanks for your feedback!
+              </p>
+              <button
+                type="button"
+                onClick={dismissNotice}
+                aria-label="Dismiss notice"
+                className="text-orange-300/70 hover:text-white transition-colors text-sm leading-none"
+              >
+                ✕
+              </button>
+            </div>
+          )}
 
           <Card className="bg-zinc-900 border-zinc-800 overflow-visible">
             <CardHeader className="pb-3">

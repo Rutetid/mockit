@@ -85,18 +85,20 @@ function StudyContent() {
   };
 
   const handleRetry = () => {
-    setAnswers(prev => prev.map(a => ({ 
-      ...a, 
-      selectedAnswer: null, 
-      isCorrect: false, 
+    const reordered = shuffleArray(answers.map(a => a.question));
+    setQuizQuestions(reordered);
+    setAnswers(reordered.map(q => ({
+      question: q,
+      selectedAnswer: null,
+      isCorrect: false,
       showAnswer: false,
-      shuffledOptions: shuffleOptions(a.question.options, a.question.correctAnswer, a.question.noShuffle)
+      shuffledOptions: shuffleOptions(q.options, q.correctAnswer, q.noShuffle)
     })));
     setShowResults(false);
   };
 
   const handleRetryWrong = () => {
-    const wrongQuestions = answers.filter(a => !a.isCorrect).map(a => a.question);
+    const wrongQuestions = shuffleArray(answers.filter(a => !a.isCorrect).map(a => a.question));
     setQuizQuestions(wrongQuestions);
     setAnswers(wrongQuestions.map(q => ({
       question: q,

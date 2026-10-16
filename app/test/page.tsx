@@ -87,19 +87,21 @@ function TestContent() {
   };
 
   const handleRetry = () => {
-    setAnswers(prev => prev.map(a => ({ 
-      ...a, 
+    const reordered = shuffleArray(answers.map(a => a.question));
+    setQuizQuestions(reordered);
+    setAnswers(reordered.map(q => ({
+      question: q,
       selectedAnswer: null,
-      shuffledOptions: shuffleOptions(a.question.options, a.question.correctAnswer, a.question.noShuffle)
+      shuffledOptions: shuffleOptions(q.options, q.correctAnswer, q.noShuffle)
     })));
     setSubmitted(false);
   };
 
   const handleRetryWrong = () => {
-    const wrongQuestions = answers.filter(a => {
+    const wrongQuestions = shuffleArray(answers.filter(a => {
       const correctIndex = a.shuffledOptions.findIndex(o => o.isCorrect);
       return a.selectedAnswer !== correctIndex;
-    }).map(a => a.question);
+    }).map(a => a.question));
     setQuizQuestions(wrongQuestions);
     setAnswers(wrongQuestions.map(q => ({ 
       question: q, 
