@@ -712,12 +712,12 @@
   {
     "id": "w7-q1",
     "week": 7,
-    "question": "Which of the following is false about learning according to Gagne’s definition?",
+    "question": "Simon defined learning as changes in a system that result in ___ over time on tasks similar to those done previously.",
     "options": [
-      "It is a change in human disposition",
-      "It persists over a period of time",
-      "It is simply ascribable to processes of growth",
-      "None of the above"
+      "boredom",
+      "decreased anxiety",
+      "improved performance",
+      "reduced performance"
     ],
     "correctAnswer": 2,
     "explanation": ""
@@ -725,36 +725,46 @@
   {
     "id": "w7-q2",
     "week": 7,
-    "question": "Manual or physical skills come under ___ component of Bloom’s taxonomy.",
-    "options": ["Cognitive", "Affective", "Psychomotor", "Physical"],
-    "correctAnswer": 2,
+    "question": "Robert Gagne defined learning as ___.",
+    "options": [
+      "a change in human disposition or capacity",
+      "a change that persists over a period of time",
+      "a change not simply ascribable to processes of growth",
+      "all of the given"
+    ],
+    "correctAnswer": 3,
     "explanation": ""
   },
   {
     "id": "w7-q3",
     "week": 7,
-    "question": "Reflection, learning and education was explored by ___.",
-    "options": ["Carl Rogers", "John Watson", "Benjamin Bloom", "John Dewey"],
+    "question": "Psychomotor skills are ___ skills.",
+    "options": ["cognitive", "spiritual", "mental", "physical"],
     "correctAnswer": 3,
     "explanation": ""
   },
   {
     "id": "w7-q4",
     "week": 7,
-    "question": "The principles of ___ refer to how close in time two events must be for a bond to be formed.",
-    "options": ["behavior", "reinforcement", "repetition", "contiguity"],
+    "question": "Returning to experience refers to ___.",
+    "options": [
+      "attending to feelings",
+      "re-examining experience in the light of one’s intent and existing knowledge",
+      "using helpful feelings and removing obstructive ones",
+      "recalling or detailing salient events"
+    ],
     "correctAnswer": 3,
     "explanation": ""
   },
   {
     "id": "w7-q5",
     "week": 7,
-    "question": "___ gives information to learners about their success or failure concerning the task at hand.",
+    "question": "Which of the following assumptions does not come under the behaviorist orientation to learning?",
     "options": [
-      "Cognitive feedback",
-      "Emotional feedback",
-      "Reinforcement",
-      "Physical feedback"
+      "Differences between individuals are important as they will affect learning",
+      "Observable behavior rather than internal thought processes are the focus of study.",
+      "Environment shapes one’s behavior",
+      "The principle of contiguity is central"
     ],
     "correctAnswer": 0,
     "explanation": ""
@@ -762,45 +772,45 @@
   {
     "id": "w7-q6",
     "week": 7,
-    "question": "The ___ orientation to learning has a quality of personal involvement—the whole person in both feeling and cognitive aspects being in the learning event.",
-    "options": ["behavioral", "cognitive", "humanistic", "social"],
-    "correctAnswer": 2,
+    "question": "Reinforcement can come through sharing of results rather than a reward.",
+    "options": ["True", "False"],
+    "correctAnswer": 0,
     "explanation": ""
   },
   {
     "id": "w7-q7",
     "week": 7,
-    "question": "Learning through play is ___ learning.",
-    "options": ["primary", "secondary", "passive", "active"],
+    "question": "___ has contributed to the humanistic orientations to learning.",
+    "options": ["linguistic", "kinesthetic", "visual", "Carl Rogers"],
     "correctAnswer": 3,
     "explanation": ""
   },
   {
     "id": "w7-q8",
     "week": 7,
-    "question": "People with ___ learning style are prone to sorting their ideas after speaking, rather than thinking ideas through before.",
-    "options": ["logical", "solitary", "visual", "auditory"],
+    "question": "In the process of learning, which of the following is not a component of output?",
+    "options": [
+      "certification",
+      "attitude change",
+      "knowledge enhancement",
+      "training plan"
+    ],
     "correctAnswer": 3,
     "explanation": ""
   },
   {
     "id": "w7-q9",
     "week": 7,
-    "question": "Which of the following statements is false?",
-    "options": [
-      "Effective instruction is static",
-      "Effective instruction is eclectic",
-      "Effective instruction is generative",
-      "Effective instruction is interactive"
-    ],
-    "correctAnswer": 0,
+    "question": "Ambience, space and decorum do not affect learning.",
+    "options": ["True", "False"],
+    "correctAnswer": 1,
     "explanation": ""
   },
   {
     "id": "w7-q10",
     "week": 7,
-    "question": "In ADDIE model, I stand for ___.",
-    "options": ["instruction", "implementation", "integration", "induction"],
+    "question": "Role-playing can motivate ___ type of learners effectively.",
+    "options": ["solitary", "social", "reading/writing", "logical/analytical"],
     "correctAnswer": 1,
     "explanation": ""
   },
